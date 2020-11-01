@@ -6,13 +6,15 @@ const mongoose = require('mongoose');
 
 app.use(cors());
 app.use(morgan("dev")); 
-app.use(express.json())
+app.use(express.json());
+
+// app.use("/",x)
 
 app.get("/",(req,res)=>{
     res.json("Root")
 })
 
-mongoose.connect("mongodb://localhost:27017/",{ useNewUrlParser: true, useUnifiedTopology: true  },(err)=>{
+mongoose.connect("mongodb://localhost:27017/dreamteam",{ useNewUrlParser: true, useUnifiedTopology: true  },(err)=>{
     if(!err){
         console.log("Mongodb Connectced")
     }
@@ -21,7 +23,7 @@ mongoose.connect("mongodb://localhost:27017/",{ useNewUrlParser: true, useUnifie
     }
 })
 
-app.listen(4000,()=>{
-    console.log("Server run port 4000")
+app.listen(2000,()=>{
+    console.log("Server run port 2000")
 })
 
